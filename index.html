@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Game Shop</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <h1 class="title">Game Shop</h1>
+        <div class="container">
+            <div class="search-bar">
+                <input placeholder="search anything" type="text" name="buscador" id="search-bar">
+            <button class="search" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg></button>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu-horizontal">
+                <li><a href="">Inicio</a></li>
+                <li>
+                    <a href="">Categorias</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#" onclick="filterByCategory('todo')">Todo</a></li>
+                        <li><a href="#" onclick="filterByCategory('accion')">Acción</a></li>
+                        <li><a href="#" onclick="filterByCategory('aventura')">Aventura</a></li>
+                        <li><a href="#" onclick="filterByCategory('terror')">Terror</a></li>
+                        <li><a href="#" onclick="filterByCategory('lucha')">Lucha</a></li>
+                        <li><a href="#" onclick="filterByCategory('deportes')">Deportes</a></li>
+                        <li><a href="#" onclick="filterByCategory('carrera')">Carrera</a></li>
+                        <li><a href="#" onclick="filterByCategory('rol')">Rol</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Acerca de Nosotros</a></li>
+            </ul>
+        </nav>
+        <button class="btn" type="submit" id="btn-modify">Modify a product</button>
+        <button class="btn" type="submit" id="btn-create">Create a new product</button>
+    </header>
+    <div class="container-products">
+        <div class="modal-modify">
+            <button id="close-modal2">X</button>
+            <p>Sku</p>
+            <input type="text" id="new-sku2" placeholder="...">
+            <p>Producto</p>
+            <input type="text" id="new-product2" placeholder="...">
+            <p>Precio</p>
+            <input type="text" id="new-price2" placeholder="...">
+            <p>Descripción</p>
+            <input type="text" id="new-description2" placeholder="...">
+            <p>Categoria</p>
+            <input type="text" id="new-category2" placeholder="...">
+            <p>Inventario</p>
+            <input type="text" id="new-stock2" placeholder="...">
+            <p>Imagen</p>
+            <input type="file" id="new-image2">
+            <button id="call-product">Call product</button>
+            <button id="update-product">Update product</button>
+        </div>
+    </div>
+    <div class="container-products">
+        <div class="modal">
+            <button id="close-modal">X</button>
+            <p>Sku</p>
+            <input type="text" id="new-sku" placeholder="...">
+            <p>Producto</p>
+            <input type="text" id="new-product" placeholder="...">
+            <p>Precio</p>
+            <input type="text" id="new-price" placeholder="...">
+            <p>Descripción</p>
+            <input type="text" id="new-description" placeholder="...">
+            <p>Categoria</p>
+            <input type="text" id="new-category" placeholder="...">
+            <p>Inventario</p>
+            <input type="text" id="new-stock" placeholder="...">
+            <p>Imagen</p>
+            <input type="file" id="new-image">
+            <button id="btn-new-create">Create new object</button>
+        </div>
+    </div>
+
+    <section class="slider-part">
+        <div class="slider-frame">
+            <ul>
+                <li><img src="./images/slide-img1.jpg" alt=""></li>
+                <li><img src="./images/slide-img2.jpg" alt=""></li>
+                <li><img src="./images/slide-img3.jpg" alt=""></li>
+                <li><img src="./images/slide-img4.jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    <section class="order">
+        <div>
+          <button id="btn-filter-asc" >Ordenar por Precio Ascendente</button>
+          <button id="btn-filter-desc" >Ordenar por Precio Descendente</button>
+      </div>
+    </section>
+        <main id="container-cards"></main>
+    <div id="cart" class="cart">
+        <div class="cart-items" id="cart-items">
+        </div>
+      
+            <!-- Total y botones de acción -->
+        <div class="cart-summary">
+            <h2>Resumen del Carrito</h2>
+            <p>Total: <span id="cart-total">$0</span></p>
+            <button id="empty-cart">Vaciar Carrito</button>
+            <button id="checkout">Checkout</button>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
