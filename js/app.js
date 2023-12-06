@@ -141,25 +141,26 @@ bar.addEventListener('input', function () {
 
 
 btnCreate.addEventListener('click', showModal);
+btnCloseModal.addEventListener('click', function() {
+  modal.style.display = 'none'
+  document.querySelector('.overlay').style.display = 'none'
+});
+
 btnModify.addEventListener('click', showModalModify);
 btnCloseModal2.addEventListener('click', function () {
     modalModify.style.display = 'none'
     document.querySelector('.overlay').style.display = 'none'
 });
-btnCloseModal.addEventListener('click', function() {
-    modal.style.display = 'none'
-    document.querySelector('.overlay').style.display = 'none'
-});
 btnNewProduct.addEventListener('click', createNewProduct);
 newImage.addEventListener('change', importImg);
 
-function showModalModify(){
-    modalModify.style.display = 'block'
-    document.querySelector('.overlay').style.display = 'block'
+function showModal() {
+  modal.style.display = 'block'
+  document.querySelector('.overlay').style.display = 'block'
 }
 
-function showModal() {
-    modal.style.display = 'block'
+function showModalModify(){
+    modalModify.style.display = 'block'
     document.querySelector('.overlay').style.display = 'block'
 }
 
@@ -367,10 +368,7 @@ document.getElementById('empty-cart').addEventListener('click', () => {
   updateCart();
 });
 
-// Función para realizar el checkout (puedes implementarla según tus necesidades)
-document.getElementById('checkout').addEventListener('click', () => {
-  // Lógica para finalizar la compra
-});
+
 
 // Evento al hacer clic en "Añadir al carrito" en cada producto
 container.addEventListener('click', function(event) {
@@ -395,16 +393,6 @@ container.addEventListener('click', function(event) {
     localStorage.setItem('products-in-cart', cart);
     updateCart();
   });
-  
-  // Función para realizar el checkout (puedes implementarla según tus necesidades)
-  document.getElementById('checkout').addEventListener('click', () => {
-    // Lógica para finalizar la compra
-});
-/*closeModModal.addEventListener('click', closeModalModify);
-
-function closeModalModify(){
-    modifyModal.classList.remove('modal-modify-show')
-}*/
 
 const callProduct = document.getElementById('call-product').addEventListener('click', updateModifyForm);
 

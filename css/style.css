@@ -387,12 +387,6 @@ div p{
   color: #fff;
 }
 
-.modal-show{
-  opacity: 1;
-  pointer-events: unset;
-  transition: opacity .6s;
-}
-
 #close-modal2{
   width: 2rem;
   height: 2rem;
@@ -666,6 +660,9 @@ div p{
 .cart-summary p{
   margin-bottom: 10px;
   margin-top: 10px;
+}
+#empty-cart:hover{
+  background-color: #3d4362;
 }
 
 @media screen and (max-width: 1279px){
